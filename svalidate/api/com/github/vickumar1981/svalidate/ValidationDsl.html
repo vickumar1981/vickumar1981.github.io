@@ -129,10 +129,18 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">svalidate</span></a>
+        <a title="Provides classes for doing simple validations in Java and Scala." href="index.html"><span class="name">svalidate</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.github.vickumar1981">vickumar1981</a></dd></dl></div>
+      <p class="shortcomment cmt">Provides classes for doing simple validations in Java and Scala.</p><div class="fullcomment"><div class="comment cmt"><p>Provides classes for doing simple validations in Java and Scala.</p><h4>Overview</h4><p> The validation wrapper is provided as a simple wrapper around a list</p><p> Results of a validation are stored in a <a href="package$$ValidationResult.html" class="extype" name="com.github.vickumar1981.svalidate.ValidationResult">com.github.vickumar1981.svalidate.ValidationResult</a>
+ A <a href="package$$ValidationResult.html" class="extype" name="com.github.vickumar1981.svalidate.ValidationResult">com.github.vickumar1981.svalidate.ValidationResult</a> can be chained to make rules
+ using the syntax provided from <a href="package$$ValidationSyntax$.html" class="extype" name="com.github.vickumar1981.svalidate.ValidationSyntax">com.github.vickumar1981.svalidate.ValidationSyntax</a>.</p><p> A validator for a class can be defined by implementing a <a href="package$$ValidatableResult.html" class="extype" name="com.github.vickumar1981.svalidate.ValidatableResult">com.github.vickumar1981.svalidate.ValidatableResult</a></p><p> Analogous classes for Java can be found in the <a href="util/index.html" class="extype" name="com.github.vickumar1981.svalidate.util">com.github.vickumar1981.svalidate.util</a> package</p><table class="doctbl">
+      <thead>
+        <tr><th class="doctbl-left"><p> Class </p></th><th class="doctbl-left"><p> Description </p></th></tr>
+      </thead>
+      <tbody><tr><td class="doctbl-left"><p> <a href="package$$ValidationResult.html" class="extype" name="com.github.vickumar1981.svalidate.ValidationResult">com.github.vickumar1981.svalidate.ValidationResult</a> </p></td><td class="doctbl-left"><p> Holds the return value from a validation </p></td></tr><tr><td class="doctbl-left"><p> <a href="package$$ValidationSyntax$.html" class="extype" name="com.github.vickumar1981.svalidate.ValidationSyntax">com.github.vickumar1981.svalidate.ValidationSyntax</a> </p></td><td class="doctbl-left"><p> Provides DSL syntax for validations </p></td></tr><tr><td class="doctbl-left"><p> <a href="package$$ValidatableResult.html" class="extype" name="com.github.vickumar1981.svalidate.ValidatableResult">com.github.vickumar1981.svalidate.ValidatableResult</a> </p></td><td class="doctbl-left"><p> Interface to implement for defining a validation </p></td></tr>
+          </tbody>
+    </table></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.github.vickumar1981">vickumar1981</a></dd></dl></div>
     </li><li name="com.github.vickumar1981.svalidate.example" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="example"></a><a id="example:example"></a>
       <span class="permalink">
@@ -171,36 +179,36 @@
                         <a href="package$$Validatable.html" title="">Validatable</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="trait" href="package$$ValidatableResult.html" title=""></a>
-                        <a href="package$$ValidatableResult.html" title="">ValidatableResult</a>
+                        <a class="trait" href="package$$ValidatableResult.html" title="A generic type class that defines which class to validate and what type of validation to return"></a>
+                        <a href="package$$ValidatableResult.html" title="A generic type class that defines which class to validate and what type of validation to return">ValidatableResult</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="trait" href="package$$ValidatableWith.html" title=""></a>
                         <a href="package$$ValidatableWith.html" title="">ValidatableWith</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="trait" href="package$$ValidatableWithResult.html" title=""></a>
-                        <a href="package$$ValidatableWithResult.html" title="">ValidatableWithResult</a>
+                        <a class="trait" href="package$$ValidatableWithResult.html" title="A generic type class that defines which class to use validateWith and what type of validation to return"></a>
+                        <a href="package$$ValidatableWithResult.html" title="A generic type class that defines which class to use validateWith and what type of validation to return">ValidatableWithResult</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="package$$Validation$.html" title=""></a>
-                        <a href="package$$Validation$.html" title="">Validation</a>
+                        <a class="object" href="package$$Validation$.html" title="Companion object containing factory methods to create a ValidationSuccess[T] or a ValidationFailure[T]"></a>
+                        <a href="package$$Validation$.html" title="Companion object containing factory methods to create a ValidationSuccess[T] or a ValidationFailure[T]">Validation</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="trait" href="" title=""></a>
                         <a href="" title="">ValidationDsl</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$ValidationFailure.html" title=""></a>
-                        <a href="package$$ValidationFailure.html" title="">ValidationFailure</a>
+                        <a class="class" href="package$$ValidationFailure.html" title="A case class that represents a validation failure of type T Extends a ValidationResult[T] and implements errors with the list of errors passed in"></a>
+                        <a href="package$$ValidationFailure.html" title="A case class that represents a validation failure of type T Extends a ValidationResult[T] and implements errors with the list of errors passed in">ValidationFailure</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="trait" href="package$$ValidationResult.html" title=""></a>
-                        <a href="package$$ValidationResult.html" title="">ValidationResult</a>
+                        <a class="trait" href="package$$ValidationResult.html" title="A generic interface that holds a validation result of type T, interoperable with Seq[T]"></a>
+                        <a href="package$$ValidationResult.html" title="A generic interface that holds a validation result of type T, interoperable with Seq[T]">ValidationResult</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$ValidationSuccess.html" title=""></a>
-                        <a href="package$$ValidationSuccess.html" title="">ValidationSuccess</a>
+                        <a class="class" href="package$$ValidationSuccess.html" title="A case class that represents a validation success of type T."></a>
+                        <a href="package$$ValidationSuccess.html" title="A case class that represents a validation success of type T.">ValidationSuccess</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="package$$ValidationSyntax$.html" title=""></a>
