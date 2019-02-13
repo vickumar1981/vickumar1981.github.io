@@ -341,8 +341,8 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <a href="SoundexImplWrapper.html" title="Jave Wrapper for soundex similarity.">SoundexImplWrapper</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title="The Strategy object has two strategies(reg ex) expressions on which to split input."></a>
-                        <a href="" title="The Strategy object has two strategies(reg ex) expressions on which to split input.">Strategy</a>
+                        <a class="object" href="package$$Strategy$.html" title="The Strategy object has two strategies(reg ex) expressions on which to split input."></a>
+                        <a href="package$$Strategy$.html" title="The Strategy object has two strategies(reg ex) expressions on which to split input.">Strategy</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="package$$StringConverter$.html" title="Object to extend operations to the String class."></a>
@@ -381,19 +381,19 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <a href="package$$WeightedScoringAlgorithm.html" title="A type class to extend a score method with a 2nd typed parameter to StringMetricAlgorithm.">WeightedScoringAlgorithm</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="trait" href="package$$WeightedStringMetric.html" title=""></a>
-                        <a href="package$$WeightedStringMetric.html" title="">WeightedStringMetric</a>
+                        <a class="trait" href="" title=""></a>
+                        <a href="" title="">WeightedStringMetric</a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="object value">
+            <body class="trait type">
       <div id="definition">
-        <div class="big-circle object">o</div>
+        <div class="big-circle trait">t</div>
         <p id="owner"><a href="../../../index.html" class="extype" name="com">com</a>.<a href="../../index.html" class="extype" name="com.github">github</a>.<a href="../index.html" class="extype" name="com.github.vickumar1981">vickumar1981</a>.<a href="index.html" class="extype" name="com.github.vickumar1981.stringdistance">stringdistance</a></p>
-        <h1>Strategy<span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html" title="Permalink">
+        <h1>WeightedStringMetric<span class="permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -403,23 +403,25 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Strategy</span>
+        <span class="name">WeightedStringMetric</span><span class="tparams">[<span name="A">A &lt;: <a href="package$$StringMetricAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetricAlgorithm">StringMetricAlgorithm</a></span>, <span name="B">B</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The Strategy object has two strategies(reg ex) expressions on which to split input.
-<a href="#splitWord:String" class="extmbr" name="com.github.vickumar1981.stringdistance.Strategy#splitWord">Strategy.splitWord</a> splits a word into a sequence of characters.
-<a href="#splitSentence:String" class="extmbr" name="com.github.vickumar1981.stringdistance.Strategy#splitSentence">Strategy.splitSentence</a> splits a sentence into a sequence of words.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">
+              Known Subclasses
+            </span>
+            <div class="subClasses hiddenContent"><a href="StringDistance$$Cosine$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Cosine">Cosine</a>, <a href="StringDistance$$Jaccard$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Jaccard">Jaccard</a>, <a href="StringDistance$$JaroWinkler$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.JaroWinkler">JaroWinkler</a>, <a href="StringDistance$$NGram$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.NGram">NGram</a>, <a href="StringDistance$$NeedlemanWunsch$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.NeedlemanWunsch">NeedlemanWunsch</a>, <a href="StringDistance$$Overlap$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Overlap">Overlap</a>, <a href="StringDistance$$SmithWaterman$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.SmithWaterman">SmithWaterman</a>, <a href="StringDistance$$SmithWatermanGotoh$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.SmithWatermanGotoh">SmithWatermanGotoh</a>, <a href="StringDistance$$Tversky$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Tversky">Tversky</a></div>
+          </div></div>
         
 
       <div id="mbrsel">
@@ -444,7 +446,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="com.github.vickumar1981.stringdistance.Strategy"><span>Strategy</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="com.github.vickumar1981.stringdistance.WeightedStringMetric"><span>WeightedStringMetric</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -474,7 +476,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -490,7 +492,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html###():Int" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -506,7 +508,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -522,7 +524,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -538,7 +540,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#clone():Object" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -559,10 +561,26 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="distance(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int"></a><a id="distance(String,String,B)(WeightedDistanceAlgorithm[A,B]):Int"></a>
+      <span class="permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#distance(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distance</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedDistanceAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedDistanceAlgorithm">WeightedDistanceAlgorithm</a>[<span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.A">A</span>, <span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -578,7 +596,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -594,7 +612,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#finalize():Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -616,7 +634,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -635,7 +653,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#hashCode():Int" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -654,7 +672,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -670,7 +688,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -686,7 +704,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#notify():Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -705,7 +723,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -721,42 +739,26 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.Strategy#splitSentence" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="splitSentence:String"></a>
+    </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="score(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double"></a><a id="score(String,String,B)(WeightedScoringAlgorithm[A,B]):Double"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#splitSentence:String" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#score(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">lazy val</span>
+        <span class="modifier"></span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">splitSentence</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="com.github.vickumar1981.stringdistance.Strategy#splitWord" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="splitWord:String"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#splitWord:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">splitWord</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">score</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedScoringAlgorithm">WeightedScoringAlgorithm</a>[<span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.A">A</span>, <span class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
       </span>
       
       
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -772,7 +774,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#toString():String" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -788,7 +790,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#wait():Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -810,7 +812,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -832,7 +834,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$Strategy$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$WeightedStringMetric.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>

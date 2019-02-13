@@ -365,6 +365,10 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <a href="StringSound$.html" title="Main class to organize functionality of different phonetic/sound string algorithms">StringSound</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="trait" href="package$$StringSoundMetric.html" title=""></a>
+                        <a href="package$$StringSoundMetric.html" title="">StringSoundMetric</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="trait" href="package$$TverskyAlgorithm.html" title="A marker interface for the tversky similarity algorithm."></a>
                         <a href="package$$TverskyAlgorithm.html" title="A marker interface for the tversky similarity algorithm.">TverskyAlgorithm</a>
                       </li><li class="current-entities indented4">
@@ -375,6 +379,10 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <span class="separator"></span>
                         <a class="trait" href="package$$WeightedScoringAlgorithm.html" title="A type class to extend a score method with a 2nd typed parameter to StringMetricAlgorithm."></a>
                         <a href="package$$WeightedScoringAlgorithm.html" title="A type class to extend a score method with a 2nd typed parameter to StringMetricAlgorithm.">WeightedScoringAlgorithm</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="trait" href="package$$WeightedStringMetric.html" title=""></a>
+                        <a href="package$$WeightedStringMetric.html" title="">WeightedStringMetric</a>
                       </li>
               </ul>
             </div>
@@ -415,7 +423,7 @@ implicit definitions from <a href="package$$DistanceAlgorithm.html" class="extyp
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="StringDistance$$Cosine$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Cosine">Cosine</a>, <a href="StringDistance$$Damerau$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Damerau">Damerau</a>, <a href="StringDistance$$DiceCoefficient$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.DiceCoefficient">DiceCoefficient</a>, <a href="StringDistance$$Hamming$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Hamming">Hamming</a>, <a href="StringDistance$$Jaccard$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Jaccard">Jaccard</a>, <a href="StringDistance$$Jaro$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Jaro">Jaro</a>, <a href="StringDistance$$JaroWinkler$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.JaroWinkler">JaroWinkler</a>, <a href="StringDistance$$Levenshtein$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Levenshtein">Levenshtein</a>, <a href="StringDistance$$LongestCommonSeq$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.LongestCommonSeq">LongestCommonSeq</a>, <a href="StringDistance$$NGram$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.NGram">NGram</a>, <a href="StringDistance$$NeedlemanWunsch$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.NeedlemanWunsch">NeedlemanWunsch</a>, <a href="StringDistance$$Overlap$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Overlap">Overlap</a>, <a href="StringDistance$$SmithWaterman$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.SmithWaterman">SmithWaterman</a>, <a href="StringDistance$$SmithWatermanGotoh$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.SmithWatermanGotoh">SmithWatermanGotoh</a>, <a href="StringDistance$$Tversky$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Tversky">Tversky</a>, <a href="StringSound$$Metaphone$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringSound.Metaphone">Metaphone</a>, <a href="StringSound$$Soundex$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringSound.Soundex">Soundex</a></div>
+            <div class="subClasses hiddenContent"><a href="StringDistance$$Damerau$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Damerau">Damerau</a>, <a href="StringDistance$$DiceCoefficient$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.DiceCoefficient">DiceCoefficient</a>, <a href="StringDistance$$Hamming$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Hamming">Hamming</a>, <a href="StringDistance$$Jaro$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Jaro">Jaro</a>, <a href="StringDistance$$Levenshtein$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.Levenshtein">Levenshtein</a>, <a href="StringDistance$$LongestCommonSeq$.html" class="extype" name="com.github.vickumar1981.stringdistance.StringDistance.LongestCommonSeq">LongestCommonSeq</a></div>
           </div></div>
         
 
@@ -556,22 +564,6 @@ implicit definitions from <a href="package$$DistanceAlgorithm.html" class="extyp
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="distance[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int"></a><a id="distance[B](String,String,B)(WeightedDistanceAlgorithm[A,B]):Int"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$StringMetric.html#distance[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">distance</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.distance.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedDistanceAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedDistanceAlgorithm">WeightedDistanceAlgorithm</a>[<span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.A">A</span>, <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.distance.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      
-      
     </li><li name="com.github.vickumar1981.stringdistance.StringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="distance(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.DistanceAlgorithm[A]):Int"></a><a id="distance(String,String)(DistanceAlgorithm[A]):Int"></a>
       <span class="permalink">
@@ -750,38 +742,6 @@ implicit definitions from <a href="package$$DistanceAlgorithm.html" class="extyp
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.SoundScoringAlgorithm[A]):Boolean"></a><a id="score(String,String)(SoundScoringAlgorithm[A]):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$StringMetric.html#score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.SoundScoringAlgorithm[A]):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">score</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$SoundScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SoundScoringAlgorithm">SoundScoringAlgorithm</a>[<span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      
-      
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="score[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double"></a><a id="score[B](String,String,B)(WeightedScoringAlgorithm[A,B]):Double"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$StringMetric.html#score[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">score</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.score.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedScoringAlgorithm">WeightedScoringAlgorithm</a>[<span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.A">A</span>, <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.score.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
-      </span>
-      
-      
     </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.ScoringAlgorithm[A]):Double"></a><a id="score(String,String)(ScoringAlgorithm[A]):Double"></a>
       <span class="permalink">

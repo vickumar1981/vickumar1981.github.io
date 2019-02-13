@@ -717,9 +717,9 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
       
       
     </li><li name="com.github.vickumar1981.stringdistance.StringConverter.StringToStringDistanceConverter#nGramDist" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="nGramDist(s2:String,nGram:Int):Double"></a><a id="nGramDist(String,Int):Double"></a>
+      <a id="nGramDist(s2:String,nGram:Int):Int"></a><a id="nGramDist(String,Int):Int"></a>
       <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/package$$StringConverter$$StringToStringDistanceConverter.html#nGramDist(s2:String,nGram:Int):Double" title="Permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/package$$StringConverter$$StringToStringDistanceConverter.html#nGramDist(s2:String,nGram:Int):Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -728,7 +728,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">nGramDist</span><span class="params">(<span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nGram">nGram: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+        <span class="name">nGramDist</span><span class="params">(<span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nGram">nGram: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       
       
@@ -830,7 +830,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">smithWaterman</span><span class="params">(<span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="gap">gap: <a href="impl/Gap.html" class="extype" name="com.github.vickumar1981.stringdistance.impl.Gap">Gap</a> = <span class="symbol"><span class="name"><a href="../../../index.html">LinearGap(gapValue = 1)</a></span></span></span>, <span name="windowSize">windowSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">Integer.MAX_VALUE</span></span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+        <span class="name">smithWaterman</span><span class="params">(<span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="gap">gap: <a href="impl/Gap.html" class="extype" name="com.github.vickumar1981.stringdistance.impl.Gap">Gap</a> = <span class="symbol"><span class="name"><a href="../../../index.html">LinearGap(gapValue = -1)</a></span></span></span>, <span name="windowSize">windowSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">Integer.MAX_VALUE</span></span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
       </span>
       
       

@@ -158,23 +158,26 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <a title="Main class to organize functionality of different string distance algorithms" href="StringDistance$.html"><span class="name">StringDistance</span></a>
       </span>
       
-      <p class="shortcomment cmt">Main class to organize functionality of different string distance algorithms</p><div class="fullcomment"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
+      <p class="shortcomment cmt">Main class to organize functionality of different string distance algorithms</p><div class="fullcomment"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.Strategy
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.impl.{ConstantGap, LinearGap}
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.implicits._
 
 <span class="cmt">// Scores between strings</span>
-<span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>)
+<span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>, Strategy.splitWord)
 <span class="kw">val</span> damerau: <span class="std">Double</span> = Damerau.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> diceCoefficient: <span class="std">Double</span> = DiceCoefficient.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> hamming: <span class="std">Double</span> = Hamming.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> jaccard: <span class="std">Double</span> = Jaccard.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> jaccard: <span class="std">Double</span> = Jaccard.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> jaro: <span class="std">Double</span> = Jaro.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> jaroWinkler: <span class="std">Double</span> = JaroWinkler.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
+<span class="kw">val</span> jaroWinkler: <span class="std">Double</span> = JaroWinkler.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, <span class="num">0.1</span>)
 <span class="kw">val</span> levenshtein: <span class="std">Double</span> = Levenshtein.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> needlemanWunsch: <span class="std">Double</span> = NeedlemanWunsch.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> ngramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> needlemanWunsch: <span class="std">Double</span> = NeedlemanWunsch.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, ConstantGap())
+<span class="kw">val</span> ngramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> bigramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">2</span>)
-<span class="kw">val</span> overlap: <span class="std">Double</span> = Overlap.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
-<span class="kw">val</span> smithWaterman: <span class="std">Double</span> = SmithWaterman.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> smithWatermanGotoh: <span class="std">Double</span> = SmithWatermanGotoh.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
+<span class="kw">val</span> overlap: <span class="std">Double</span> = Overlap.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
+<span class="kw">val</span> smithWaterman: <span class="std">Double</span> = SmithWaterman.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, (LinearGap(gapValue = -<span class="num">1</span>), Integer.MAX_VALUE))
+<span class="kw">val</span> smithWatermanGotoh: <span class="std">Double</span> = SmithWatermanGotoh.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, ConstantGap())
 <span class="kw">val</span> tversky: <span class="std">Double</span> = Tversky.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">0.5</span>)
 
 <span class="cmt">// Distances between strings</span>
@@ -182,7 +185,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
 <span class="kw">val</span> hammingDist: <span class="std">Int</span> = Hamming.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> levenshteinDist: <span class="std">Int</span> = Levenshtein.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> longestCommonSubSeq: <span class="std">Int</span> = LongestCommonSeq.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> ngramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> ngramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> bigramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">2</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.github.vickumar1981.stringdistance">stringdistance</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
@@ -418,22 +421,6 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
               
         </dd></dl></div>
     </li><li name="com.github.vickumar1981.stringdistance.StringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="distance[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int"></a><a id="distance[B](String,String,B)(WeightedDistanceAlgorithm[HammingAlgorithm,B]):Int"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$Hamming$.html#distance[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">distance</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.distance.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedDistanceAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedDistanceAlgorithm">WeightedDistanceAlgorithm</a>[<a href="package$$HammingAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.HammingAlgorithm">HammingAlgorithm</a>, <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.distance.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a></dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="distance(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.DistanceAlgorithm[A]):Int"></a><a id="distance(String,String)(DistanceAlgorithm[HammingAlgorithm]):Int"></a>
       <span class="permalink">
       <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$Hamming$.html#distance(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.DistanceAlgorithm[A]):Int" title="Permalink">
@@ -611,38 +598,6 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.SoundScoringAlgorithm[A]):Boolean"></a><a id="score(String,String)(SoundScoringAlgorithm[HammingAlgorithm]):Boolean"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$Hamming$.html#score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.SoundScoringAlgorithm[A]):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">score</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$SoundScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SoundScoringAlgorithm">SoundScoringAlgorithm</a>[<a href="package$$HammingAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.HammingAlgorithm">HammingAlgorithm</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a></dd></dl></div>
-    </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="score[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double"></a><a id="score[B](String,String,B)(WeightedScoringAlgorithm[HammingAlgorithm,B]):Double"></a>
-      <span class="permalink">
-      <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$Hamming$.html#score[B](s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">score</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="weight">weight: <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.score.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedScoringAlgorithm">WeightedScoringAlgorithm</a>[<a href="package$$HammingAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.HammingAlgorithm">HammingAlgorithm</a>, <span class="extype" name="com.github.vickumar1981.stringdistance.StringMetric.score.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a></dd></dl></div>
     </li><li name="com.github.vickumar1981.stringdistance.StringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.ScoringAlgorithm[A]):Double"></a><a id="score(String,String)(ScoringAlgorithm[HammingAlgorithm]):Double"></a>
       <span class="permalink">

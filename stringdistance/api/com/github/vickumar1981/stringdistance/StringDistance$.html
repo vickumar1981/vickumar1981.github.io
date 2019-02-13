@@ -365,6 +365,10 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <a href="StringSound$.html" title="Main class to organize functionality of different phonetic/sound string algorithms">StringSound</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="trait" href="package$$StringSoundMetric.html" title=""></a>
+                        <a href="package$$StringSoundMetric.html" title="">StringSoundMetric</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="trait" href="package$$TverskyAlgorithm.html" title="A marker interface for the tversky similarity algorithm."></a>
                         <a href="package$$TverskyAlgorithm.html" title="A marker interface for the tversky similarity algorithm.">TverskyAlgorithm</a>
                       </li><li class="current-entities indented4">
@@ -375,6 +379,10 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                         <span class="separator"></span>
                         <a class="trait" href="package$$WeightedScoringAlgorithm.html" title="A type class to extend a score method with a 2nd typed parameter to StringMetricAlgorithm."></a>
                         <a href="package$$WeightedScoringAlgorithm.html" title="A type class to extend a score method with a 2nd typed parameter to StringMetricAlgorithm.">WeightedScoringAlgorithm</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="trait" href="package$$WeightedStringMetric.html" title=""></a>
+                        <a href="package$$WeightedStringMetric.html" title="">WeightedStringMetric</a>
                       </li>
               </ul>
             </div>
@@ -403,23 +411,26 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.Strategy
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.impl.{ConstantGap, LinearGap}
+<span class="kw">import</span> com.github.vickumar1981.stringdistance.implicits._
 
 <span class="cmt">// Scores between strings</span>
-<span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>)
+<span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>, Strategy.splitWord)
 <span class="kw">val</span> damerau: <span class="std">Double</span> = Damerau.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> diceCoefficient: <span class="std">Double</span> = DiceCoefficient.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> hamming: <span class="std">Double</span> = Hamming.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> jaccard: <span class="std">Double</span> = Jaccard.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> jaccard: <span class="std">Double</span> = Jaccard.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> jaro: <span class="std">Double</span> = Jaro.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> jaroWinkler: <span class="std">Double</span> = JaroWinkler.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
+<span class="kw">val</span> jaroWinkler: <span class="std">Double</span> = JaroWinkler.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, <span class="num">0.1</span>)
 <span class="kw">val</span> levenshtein: <span class="std">Double</span> = Levenshtein.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> needlemanWunsch: <span class="std">Double</span> = NeedlemanWunsch.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> ngramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> needlemanWunsch: <span class="std">Double</span> = NeedlemanWunsch.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, ConstantGap())
+<span class="kw">val</span> ngramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> bigramSimilarity: <span class="std">Double</span> = NGram.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">2</span>)
-<span class="kw">val</span> overlap: <span class="std">Double</span> = Overlap.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
-<span class="kw">val</span> smithWaterman: <span class="std">Double</span> = SmithWaterman.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> smithWatermanGotoh: <span class="std">Double</span> = SmithWatermanGotoh.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
+<span class="kw">val</span> overlap: <span class="std">Double</span> = Overlap.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
+<span class="kw">val</span> smithWaterman: <span class="std">Double</span> = SmithWaterman.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, (LinearGap(gapValue = -<span class="num">1</span>), Integer.MAX_VALUE))
+<span class="kw">val</span> smithWatermanGotoh: <span class="std">Double</span> = SmithWatermanGotoh.score(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>, ConstantGap())
 <span class="kw">val</span> tversky: <span class="std">Double</span> = Tversky.score(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">0.5</span>)
 
 <span class="cmt">// Distances between strings</span>
@@ -427,7 +438,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
 <span class="kw">val</span> hammingDist: <span class="std">Int</span> = Hamming.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> levenshteinDist: <span class="std">Int</span> = Levenshtein.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
 <span class="kw">val</span> longestCommonSubSeq: <span class="std">Int</span> = LongestCommonSeq.distance(<span class="lit">"martha"</span>, <span class="lit">"marhta"</span>)
-<span class="kw">val</span> ngramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>)
+<span class="kw">val</span> ngramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">1</span>)
 <span class="kw">val</span> bigramDist: <span class="std">Int</span> = NGram.distance(<span class="lit">"karolin"</span>, <span class="lit">"kathrin"</span>, <span class="num">2</span>)</pre></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -847,7 +858,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$Cosine$.html"><span class="name">Cosine</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$CosineAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.CosineAlgorithm">CosineAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$Cosine$.html"><span class="name">Cosine</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$CosineAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.CosineAlgorithm">CosineAlgorithm</a>, <span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
       
@@ -911,7 +922,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$Jaccard$.html"><span class="name">Jaccard</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$JaccardAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.JaccardAlgorithm">JaccardAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$Jaccard$.html"><span class="name">Jaccard</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$JaccardAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.JaccardAlgorithm">JaccardAlgorithm</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
       
@@ -943,7 +954,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$JaroWinkler$.html"><span class="name">JaroWinkler</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$JaroWinklerAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.JaroWinklerAlgorithm">JaroWinklerAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$JaroWinkler$.html"><span class="name">JaroWinkler</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$JaroWinklerAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.JaroWinklerAlgorithm">JaroWinklerAlgorithm</a>, <span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
       
@@ -991,7 +1002,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$NGram$.html"><span class="name">NGram</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$NGramAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NGramAlgorithm">NGramAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$NGram$.html"><span class="name">NGram</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$NGramAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NGramAlgorithm">NGramAlgorithm</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
       
@@ -1007,7 +1018,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$NeedlemanWunsch$.html"><span class="name">NeedlemanWunsch</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$NeedlemanWunschAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NeedlemanWunschAlgorithm">NeedlemanWunschAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$NeedlemanWunsch$.html"><span class="name">NeedlemanWunsch</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$NeedlemanWunschAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NeedlemanWunschAlgorithm">NeedlemanWunschAlgorithm</a>, <a href="impl/ConstantGap.html" class="extype" name="com.github.vickumar1981.stringdistance.impl.ConstantGap">ConstantGap</a>]</span>
       </span>
       
       
@@ -1023,7 +1034,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$Overlap$.html"><span class="name">Overlap</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$OverlapAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.OverlapAlgorithm">OverlapAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$Overlap$.html"><span class="name">Overlap</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$OverlapAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.OverlapAlgorithm">OverlapAlgorithm</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
       
@@ -1039,7 +1050,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$SmithWaterman$.html"><span class="name">SmithWaterman</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$SmithWatermanAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SmithWatermanAlgorithm">SmithWatermanAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$SmithWaterman$.html"><span class="name">SmithWaterman</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$SmithWatermanAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SmithWatermanAlgorithm">SmithWatermanAlgorithm</a>, (<a href="impl/Gap.html" class="extype" name="com.github.vickumar1981.stringdistance.impl.Gap">Gap</a>, <span class="extype" name="scala.Int">Int</span>)]</span>
       </span>
       
       
@@ -1055,7 +1066,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$SmithWatermanGotoh$.html"><span class="name">SmithWatermanGotoh</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$SmithWatermanGotohAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SmithWatermanGotohAlgorithm">SmithWatermanGotohAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$SmithWatermanGotoh$.html"><span class="name">SmithWatermanGotoh</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$SmithWatermanGotohAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.SmithWatermanGotohAlgorithm">SmithWatermanGotohAlgorithm</a>, <a href="impl/ConstantGap.html" class="extype" name="com.github.vickumar1981.stringdistance.impl.ConstantGap">ConstantGap</a>]</span>
       </span>
       
       
@@ -1071,7 +1082,7 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="StringDistance$$Tversky$.html"><span class="name">Tversky</span></a><span class="result"> extends <a href="package$$StringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.StringMetric">StringMetric</a>[<a href="package$$TverskyAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.TverskyAlgorithm">TverskyAlgorithm</a>]</span>
+        <a title="" href="StringDistance$$Tversky$.html"><span class="name">Tversky</span></a><span class="result"> extends <a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a>[<a href="package$$TverskyAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.TverskyAlgorithm">TverskyAlgorithm</a>, <span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
       
