@@ -161,7 +161,6 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
       <p class="shortcomment cmt">Main class to organize functionality of different string distance algorithms</p><div class="fullcomment"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.Strategy
 <span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
 <span class="kw">import</span> com.github.vickumar1981.stringdistance.impl.{ConstantGap, LinearGap}
-<span class="kw">import</span> com.github.vickumar1981.stringdistance.implicits._
 
 <span class="cmt">// Scores between strings</span>
 <span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>, Strategy.splitWord)

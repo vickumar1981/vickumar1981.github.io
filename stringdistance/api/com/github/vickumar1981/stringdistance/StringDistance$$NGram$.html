@@ -161,7 +161,6 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
       <p class="shortcomment cmt">Main class to organize functionality of different string distance algorithms</p><div class="fullcomment"><div class="comment cmt"><p>Main class to organize functionality of different string distance algorithms</p><pre><span class="kw">import</span> com.github.vickumar1981.stringdistance.Strategy
 <span class="kw">import</span> com.github.vickumar1981.stringdistance.StringDistance._
 <span class="kw">import</span> com.github.vickumar1981.stringdistance.impl.{ConstantGap, LinearGap}
-<span class="kw">import</span> com.github.vickumar1981.stringdistance.implicits._
 
 <span class="cmt">// Scores between strings</span>
 <span class="kw">val</span> cosSimilarity: <span class="std">Double</span> = Cosine.score(<span class="lit">"hello"</span>, <span class="lit">"chello"</span>, Strategy.splitWord)
@@ -421,6 +420,22 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
               
         </dd></dl></div>
     </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="distance(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int"></a><a id="distance(String,String)(WeightedDistanceAlgorithm[NGramAlgorithm,Int]):Int"></a>
+      <span class="permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$NGram$.html#distance(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distance</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedDistanceAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedDistanceAlgorithm">WeightedDistanceAlgorithm</a>[<a href="package$$NGramAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NGramAlgorithm">NGramAlgorithm</a>, <span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a></dd></dl></div>
+    </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#distance" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="distance(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int"></a><a id="distance(String,String,Int)(WeightedDistanceAlgorithm[NGramAlgorithm,Int]):Int"></a>
       <span class="permalink">
       <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$NGram$.html#distance(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedDistanceAlgorithm[A,B]):Int" title="Permalink">
@@ -598,6 +613,22 @@ implicits for using distance and fuzzy match scores as an operator, like:</p><pr
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double"></a><a id="score(String,String)(WeightedScoringAlgorithm[NGramAlgorithm,Int]):Double"></a>
+      <span class="permalink">
+      <a href="../../../../com/github/vickumar1981/stringdistance/StringDistance$$NGram$.html#score(s1:String,s2:String)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">score</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="algo">algo: <a href="package$$WeightedScoringAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedScoringAlgorithm">WeightedScoringAlgorithm</a>[<a href="package$$NGramAlgorithm.html" class="extype" name="com.github.vickumar1981.stringdistance.NGramAlgorithm">NGramAlgorithm</a>, <span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="package$$WeightedStringMetric.html" class="extype" name="com.github.vickumar1981.stringdistance.WeightedStringMetric">WeightedStringMetric</a></dd></dl></div>
     </li><li name="com.github.vickumar1981.stringdistance.WeightedStringMetric#score" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="score(s1:String,s2:String,weight:B)(implicitalgo:com.github.vickumar1981.stringdistance.package.WeightedScoringAlgorithm[A,B]):Double"></a><a id="score(String,String,Int)(WeightedScoringAlgorithm[NGramAlgorithm,Int]):Double"></a>
       <span class="permalink">
